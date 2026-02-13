@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Smart Serve</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a1a2e;
+    --accent: #00d4ff;
+    --text-light: #f5f5f5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f1c;
+    color: var(--text-light);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26,26,46,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('images/decoration.jpeg') center/cover fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,26,46,0.8), rgba(0,212,255,0.2));
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    z-index: 1;
+}
+
+.image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+.image-card1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+.image-card2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.image-card img {
+    width: 380px;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.image-card1 img {
+    width: 380px;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.image-card2 img {
+    width: 380px;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.1);
+}
+.image-card1:hover img {
+    transform: scale(1.1);
+}
+.image-card2:hover img {
+    transform: scale(1.1);
+}
+
+/* Hover Title */
+.image-card::after {
+    content: "House Cleaning & Office Cleaning";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.image-card:hover::after {
+    opacity: 1;
+}
+
+.image-card1::after {
+    content: "House Shifting & Office shifting";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.image-card1:hover::after {
+    opacity: 1;
+}
+.image-card2::after {
+    content: "Flower Decoration & Event Decoration";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.image-card2:hover::after {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background: #12122b;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .image-card img {
+        width: 280px;
+        height: 380px;
+    }
+    
+    .image-card1 img {
+        width: 280px;
+        height: 380px;
+    }
+    .image-card2 img {
+        width: 280px;
+        height: 380px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">AR Smart Serve</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="ABOUT_US.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <!-- <li><a href="guestbook.html">BOOK</a></li> -->
+                  <li><a href="blog.html">SERVICE</a></li>
+                <li><a href="cont.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="image-card">
+            <img src="images/housekeeping.jpg" alt="housekeeping">
+        </div>
+        <div class="image-card1">
+            <img src="images/shifting.jpg" alt="shifting">
+        </div>
+        <div class="image-card2">
+            <img src="images/decoration.jpeg" alt="Decoration">
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 AR Smart Serve Celebration. All Rights Reserved.
+</footer>
+</body>
+</html>
+
+
